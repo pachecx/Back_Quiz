@@ -1,5 +1,6 @@
 package quiz.com.backquiz.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -19,7 +20,6 @@ public class Alternativa {
 
     @ManyToOne
     @JoinColumn(name = "pergunta_id")
-    @JsonIgnore
-     @JsonManagedReference 
+    @JsonBackReference
     private Pergunta pergunta;
 }

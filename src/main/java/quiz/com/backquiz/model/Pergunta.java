@@ -20,11 +20,10 @@ public class Pergunta {
 
     @ManyToOne
     @JoinColumn(name = "quiz_id")
-     @JsonIgnore
      @JsonBackReference 
     private Quiz quiz;
 
-    @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "pergunta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
      @JsonManagedReference
     private List<Alternativa> alternativas;
 }

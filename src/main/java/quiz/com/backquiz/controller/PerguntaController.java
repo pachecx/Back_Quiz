@@ -26,4 +26,8 @@ public class PerguntaController {
     public Pergunta buscarPergunta(@PathVariable Long id) {
         return perguntaRepository.findById(id).orElse(null);
     }
+    @GetMapping("/quiz/{quizId}")
+    public List<Pergunta> listarPerguntasPorQuiz(@PathVariable Long quizId) {
+    return perguntaRepository.findByQuizId(quizId);
+}
 }
